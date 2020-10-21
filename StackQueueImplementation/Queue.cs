@@ -42,6 +42,16 @@ namespace StackQueueImplementation
             }
             Console.WriteLine();
         }
-
+        internal void Dequeue()
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("Queue is empty");
+                return;
+            }
+            Console.WriteLine(this.head.data + " is removed from queue");
+            this.head = this.head.next;
+            Display();
+        }
     }
 }
