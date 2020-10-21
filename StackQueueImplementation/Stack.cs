@@ -34,6 +34,7 @@ namespace StackQueueImplementation
             if (temp == null)
             {
                 Console.WriteLine("Stack is empty");
+                return;
             }
             Console.WriteLine("\nData present in Stack : ");
             while (temp != null)
@@ -42,6 +43,35 @@ namespace StackQueueImplementation
                 temp = temp.next;
             }
         }
+        internal void Peek()
+        {
+            if (this.top == null)
+            {
+                Console.WriteLine("Stack is empty");
+                return;
+            }
+            Console.WriteLine(this.top.data + " is at top of the stack");
+        }
 
+        internal void Pop()
+        {
+            if (this.top == null)
+            {
+                Console.WriteLine("Stack is empty");
+                return;
+            }
+            Console.WriteLine(this.top.data + " removed from stack");
+            this.top = this.top.next;
+            Display();
+        }
+
+        internal void isEmpty()
+        {
+            while (this.top != null )
+            {
+                Peek();
+                Pop();
+            }
+        }
     }
 }
